@@ -15,8 +15,6 @@ public class FinalUrl {
     public static final String TRIPS="https://chanyouji.com/api/destinations/trips/";
     public static final String SEASONS="https://chanyouji.com/api/destinations/trips/";
 
-    public static final String ENTER_ATTRACTIONS="https://chanyouji.com/api/destinations/attractions/";
-
 
 
 }

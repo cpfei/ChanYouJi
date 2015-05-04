@@ -13,9 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.String;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -77,7 +75,7 @@ public class PaseJson {
     }
 
     //List<Articles> list
-    public static List<Articles> jsonToArticles(String s) {
+    public static List<Articles> jsonToArticles(String s){
         try {
             JSONArray array = new JSONArray(s);
             ArrayList<Articles> articleses = new ArrayList<>();
@@ -96,8 +94,7 @@ public class PaseJson {
         }
         return null;
     }
-
-    public static List<PlansData> jsonToPlansList(String json) {
+    public static List<PlansData> jsonToPlansList(String json){
         try {
             JSONArray array = new JSONArray(json);
             ArrayList<PlansData> plansDatas = new ArrayList<>();
@@ -122,7 +119,7 @@ public class PaseJson {
         return null;
     }
 
-    public static List<TripsData> jsonToTripsDataList(String json) {
+    public static List<TripsData> jsonToTripsDataList(String json){
         try {
             JSONArray array = new JSONArray(json);
             ArrayList<TripsData> tripsDatas = new ArrayList<>();
@@ -142,34 +139,6 @@ public class PaseJson {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return null;
-    }
-
-
-    public static List<HashMap<String, String>> jsonToEnter_AttractionsData(String str) {
-
-        try {
-            JSONArray array = new JSONArray(str);
-            List<HashMap<String, String>> list = new ArrayList<>();
-            HashMap<String, String> map = null;
-            for (int i = 0; i < array.length(); i++) {
-                JSONObject jsonObject = array.getJSONObject(i);
-                map = new HashMap<String, String>();
-                map.put("name", jsonObject.getString("name"));
-                map.put("id", jsonObject.getString("id"));
-                map.put("attraction_trips_count", jsonObject.getString("attraction_trips_count"));
-                map.put("user_score", jsonObject.getString("user_score"));
-                map.put("description", jsonObject.getString("description"));
-                map.put("name_en", jsonObject.getString("name_en"));
-                map.put("description_summary", jsonObject.getString("description_summary"));
-                map.put("image_url", jsonObject.getString("image_url"));
-                list.add(map);
-            }
-            return list;
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
         return null;
     }
 

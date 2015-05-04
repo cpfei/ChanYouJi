@@ -10,15 +10,14 @@
         android:src="@drawable/ic_launcher"
         android:scaleType="fitXY"
         android:id="@+id/cantr_image" />
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:textColor="#ffffff"
-        android:textSize="18dp"
         android:id="@+id/cantr_name"
-        />
+        android:layout_width="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content" />
+
 
     <RadioGroup
         android:layout_width="match_parent"
