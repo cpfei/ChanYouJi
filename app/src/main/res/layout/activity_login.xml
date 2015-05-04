@@ -3,18 +3,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ff6497ff">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:id="@+id/articlesback"
+            android:paddingLeft="5dp">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_right_normal" />
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_b" />
 
+            <TextView
+                android:id="@+id/articles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textColor="#ffffff"
+                android:text="登录与注册"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:id="@+id/login_rg"
+        android:orientation="horizontal">
 
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:id="@+id/login"
+            android:text="登录"
+            android:textColor="@color/rb_text2_color"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:background="@drawable/rb_bg_selector" />
 
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/zhuce"
+            android:button="@null"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="@color/rb_text2_color"
+            android:background="@drawable/rb_bg_selector"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
 
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/login_rg"
+        android:layout_height="match_parent"
+        android:id="@+id/login_viewpage"
+        android:layout_width="match_parent"></android.support.v4.view.ViewPager>
 
 
 </RelativeLayout>

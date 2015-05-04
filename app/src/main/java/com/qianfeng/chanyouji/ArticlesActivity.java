@@ -74,6 +74,8 @@ public class ArticlesActivity extends ActionBarActivity implements PullToRefresh
         name_zh_cn = intent.getStringExtra("name_Zh_Cn");
         text_Name.setText(name_zh_cn);
 
+
+
     }
 
     @Override

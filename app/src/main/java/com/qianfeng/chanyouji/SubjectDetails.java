@@ -114,6 +114,7 @@ public class SubjectDetails extends ActionBarActivity {
                     SubjectDetalisData data=null;
 
                     for(int i=1;i<article_sections.length();i++){
+
                         JSONObject obj = article_sections.getJSONObject(i);
                         data=new SubjectDetalisData();
 

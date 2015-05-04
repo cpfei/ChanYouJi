@@ -17,11 +17,13 @@ import android.widget.TextView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.qianfeng.chanyouji.adapter.CantrayPackageBookAdapter;
+import com.qianfeng.chanyouji.beans.Destination;
 import com.qianfeng.chanyouji.beans.Entry_Destination;
 import com.qianfeng.chanyouji.netutils.DownLoadData;
 import com.qianfeng.chanyouji.netutils.PaseJson;
 import com.qianfeng.chanyouji.urls.FinalUrl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,6 +33,7 @@ public class CanTrayPackageBookActivity extends ActionBarActivity implements Vie
     private Button btnBack;
     private PullToRefreshListView listView;
     private String id;
+    private List<Entry_Destination> list;
     private CantrayPackageBookAdapter adapter;
     private Handler handler =new Handler(){
 
@@ -38,12 +41,13 @@ public class CanTrayPackageBookActivity extends ActionBarActivity implements Vie
         @Override
         public void handleMessage(Message msg) {
             listView.onRefreshComplete();
+            list.clear();
             String s = (String) msg.obj;
             //解析
             List<Entry_Destination> entry_destinations = PaseJson.jsonToList2(s);
+            list.addAll(entry_destinations);
             //设置适配器
-            adapter = new CantrayPackageBookAdapter(CanTrayPackageBookActivity.this,entry_destinations);
-            listView.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
 
         }
     };
@@ -70,6 +74,9 @@ public class CanTrayPackageBookActivity extends ActionBarActivity implements Vie
         btnBack.setOnClickListener(this);
         text_Name = ((TextView) findViewById(R.id.text_name));
         text_Name.setText(name_zh_cn + "口袋书");
+        list=new ArrayList<Entry_Destination>();
+        adapter = new CantrayPackageBookAdapter(CanTrayPackageBookActivity.this,list);
+        listView.setAdapter(adapter);
     }
 
     @Override
@@ -79,7 +86,7 @@ public class CanTrayPackageBookActivity extends ActionBarActivity implements Vie
 
     @Override
     public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-        adapter.clear();
+
         DownLoadData.downData(this, FinalUrl.ENTER_DESTINATION+id+".json",handler,1);
     }
 }

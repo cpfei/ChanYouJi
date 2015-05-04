@@ -37,20 +37,39 @@
             android:name=".SearchActivity"
             android:label="@string/title_activity_search" >
         </activity>
-        <activity android:name=".PlansActivity">
-
+        <activity android:name=".PlansActivity" >
         </activity>
-
-        <activity android:name=".TripsActivity">
-
+        <activity android:name=".TripsActivity" >
         </activity>
-        <activity android:name=".ArticlesActivity">
-
+        <activity android:name=".ArticlesActivity" >
         </activity>
-        <activity android:name=".SearchDetailsActivity">
-
+        <activity android:name=".SearchDetailsActivity" >
         </activity>
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
 
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sharesdk.chanyouji.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".Enter_LvxingDi"
+            android:label="@string/title_activity_enter__lvxing_di" >
+        </activity>
     </application>
 
 </manifest>
