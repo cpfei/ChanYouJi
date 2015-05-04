@@ -157,6 +157,4 @@ public class SubjectdetalilsAdapter extends BaseAdapter implements PinnedSection
     }
 
 
-
-
 }

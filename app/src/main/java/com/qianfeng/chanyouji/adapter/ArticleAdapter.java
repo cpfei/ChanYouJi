@@ -1,6 +1,7 @@
 package com.qianfeng.chanyouji.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.qianfeng.chanyouji.R;
+import com.qianfeng.chanyouji.SubjectDetails;
 import com.qianfeng.chanyouji.beans.Articles;
 import com.qianfeng.chanyouji.netutils.BitmapHelper;
 
@@ -50,9 +52,18 @@ public class ArticleAdapter extends BaseAdapter {
 
         TextView text_Title = (TextView) convertView.findViewById(R.id.articles_texttitle);
         text_Title.setText(articles.getTitle());
+        final String id = articles.getId();
 
         ImageView image_Image = (ImageView) convertView.findViewById(R.id.articles_imageview);
         BitmapHelper.getBitmapUtils().display(image_Image,articles.getImage_url());
+        image_Image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, SubjectDetails.class);
+                intent.putExtra("id", id);
+                context.startActivity(intent);
+            }
+        });
         return convertView;
     }
 }
