@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,6 +141,12 @@ public class PaseJson {
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    public static void jsonToEnter_AttractionsData(String str){
+
+
     }
 
 }

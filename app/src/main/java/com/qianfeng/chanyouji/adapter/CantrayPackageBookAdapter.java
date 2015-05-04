@@ -14,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.qianfeng.chanyouji.ArticlesActivity;
+import com.qianfeng.chanyouji.Enter_LvxingDi;
 import com.qianfeng.chanyouji.PlansActivity;
 import com.qianfeng.chanyouji.R;
 import com.qianfeng.chanyouji.TripsActivity;
@@ -53,7 +54,6 @@ public class CantrayPackageBookAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final Entry_Destination entry_destination = list.get(position);
-        Log.d("===id",entry_destination.getId());
         convertView= LayoutInflater.from(context).inflate(R.layout.item_cantrybook,null);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.cantr_image);
         TextView te = (TextView) convertView.findViewById(R.id.cantr_name);
@@ -94,15 +94,24 @@ public class CantrayPackageBookAdapter extends BaseAdapter {
             }
         });
 
+        //点击旅行地
+
+        ((RadioButton) convertView.findViewById(R.id.cantry_rb3)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,Enter_LvxingDi.class);
+                intent.putExtra("name_Zh_Cn",entry_destination.getName_Zh_Cn()+"旅行地");
+                intent.putExtra("id",entry_destination.getId());
+                context.startActivity(intent);
+            }
+        });
+
 
         return convertView;
     }
 
 
 
-    public void clear(){
-        list.clear();
-        notifyDataSetChanged();
-    }
+
 
 }
