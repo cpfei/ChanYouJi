@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/travel_rl"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/header_travel_iv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/header_travel_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="25dp"
+            android:paddingLeft="20dp"
+            android:src="@drawable/icon_poi_top_location" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/header_travel_iv2"
+            android:paddingBottom="16dp"
+            android:paddingLeft="8dp">
+
+            <TextView
+                android:id="@+id/header_travel_tv_cn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="泰国大皇宫"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/header_travel_tv_en"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header_travel_tv_cn"
+                android:text="THE GRAND PLACE" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/travel_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <RadioButton
+            android:id="@+id/travel_rb1"
+            style="@style/cantry_rg"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/travel_rb1"
+            android:text="图片"
+            android:textColor="@color/special_text1_color"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/travel_rb2"
+            style="@style/cantry_rg"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/travel_rb2"
+            android:text="游记"
+            android:textColor="@color/special_text1_color"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/travel_rb3"
+            style="@style/cantry_rg"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/travel_rb3"
+            android:text="地图"
+            android:textColor="@color/special_text1_color"></RadioButton>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/header_travel_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp" />
+
+</LinearLayout>

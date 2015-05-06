@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="#000000"
+        android:alpha="0.4"
+        android:id="@+id/rls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/item_travel_item_iv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="8dp"
+            android:src="@drawable/arrow_right_normal" />
+
+        <ImageView
+            android:id="@+id/item_travel_item_iv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/item_travel_item_iv1"
+            android:paddingLeft="5dp"
+            android:src="@drawable/logo_b" />
+
+        <ImageView
+            android:id="@+id/item_travel_item_iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingRight="18dp"
+            android:src="@drawable/collection_b"
+            android:layout_toLeftOf="@+id/item_travel_item_iv4"
+            android:layout_toStartOf="@+id/item_travel_item_iv4" />
+
+        <ImageView
+            android:id="@+id/item_travel_item_iv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="13dp"
+            android:src="@drawable/share_a_normal" />
+
+    </RelativeLayout>
+
+    <com.hb.views.PinnedSectionListView
+        android:layout_below="@+id/rls"
+        android:id="@+id/item_travel_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.hb.views.PinnedSectionListView>
+
+</RelativeLayout>

@@ -14,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -141,5 +142,37 @@ public class PaseJson {
         }
         return null;
     }
+
+
+    public static List<HashMap<String, String>> jsonToEnter_AttractionsData(String s){
+        List<HashMap<String,String>> list=new ArrayList<>();
+        try {
+            JSONArray array = new JSONArray(s);
+            HashMap<String,String> map=null;
+            for (int i = 0; i < array.length(); i++) {
+                map=new HashMap<String,String>();
+                JSONObject jsonObject = array.getJSONObject(i);
+                map.put("id",jsonObject.getString("id"));
+                map.put("name",jsonObject.getString("name"));
+                map.put("attraction_trips_count",jsonObject.getString("attraction_trips_count"));
+                map.put("user_score",jsonObject.getString("user_score"));
+                map.put("description",jsonObject.getString("description"));
+                map.put("name_en",jsonObject.getString("name_en"));
+                map.put("description_summary",jsonObject.getString("description_summary"));
+                map.put("image_url",jsonObject.getString("image_url"));
+                list.add(map);
+            }
+             return list;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
+    }
+
+
+
+
 
 }

@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.qianfeng.chanyouji.ArticlesActivity;
 import com.qianfeng.chanyouji.Enter_LvxingDi;
 import com.qianfeng.chanyouji.PlansActivity;
+
 import com.qianfeng.chanyouji.R;
 import com.qianfeng.chanyouji.TripsActivity;
 import com.qianfeng.chanyouji.beans.Entry_Destination;
@@ -38,6 +39,8 @@ public class CantrayPackageBookAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+
+        Log.d("getCount==",list.toString());
         return list.size();
     }
 
@@ -61,8 +64,12 @@ public class CantrayPackageBookAdapter extends BaseAdapter {
             te.setText(entry_destination.getName_Zh_Cn()+"概览 "+entry_destination.getName_En());
         }else {
             te.setText(entry_destination.getName_Zh_Cn()+" "+entry_destination.getName_En());
+
         }
-        BitmapHelper.getBitmapUtils().display(imageView,entry_destination.getImage_Url());
+
+        if(!entry_destination.getImage_Url().equals("")) {
+            BitmapHelper.getBitmapUtils().display(imageView, entry_destination.getImage_Url());
+        }
 
         ((RadioButton) convertView.findViewById(R.id.cantry_rb1)).setOnClickListener(new View.OnClickListener() {
             @Override
