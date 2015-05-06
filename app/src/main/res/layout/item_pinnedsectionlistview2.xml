@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_pinnedsectionlistview2_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="个儿高热瓦尔和一天干热风刚发的闺丰盛的v发DVD发v的v改天让给他人共同如果为分发其他意图帇规范干部冯绍峰v" />
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/item_pinnedsectionlistview2_rv"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="160dp"></android.support.v7.widget.RecyclerView>-->
+
+    <!--<com.qianfeng.chanyouji.beans.MyRecyclerView-->
+    <!--android:layout_width="100dp"-->
+    <!--android:layout_height="80dp"-->
+    <!--android:id="@+id/item_pinnedsectionlistview2_rv"-->
+    <!--></com.qianfeng.chanyouji.beans.MyRecyclerView>-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:id="@+id/test_image"/>-->
+
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:id="@+id/horizontalscrollviewiv1"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:id="@+id/horizontalscrollviewiv2"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:id="@+id/horizontalscrollviewiv3"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:id="@+id/horizontalscrollviewiv4"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:id="@+id/horizontalscrollviewiv5"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:id="@+id/horizontalscrollviewiv6"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:id="@+id/horizontalscrollviewiv7"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="7dp">
+
+        <TextView
+            android:id="@+id/item_pinnedsectionlistview2_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="米娅哟" />
+
+        <TextView
+            android:id="@+id/item_pinnedsectionlistview2_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="米娅哟" />
+    </RelativeLayout>
+</LinearLayout>

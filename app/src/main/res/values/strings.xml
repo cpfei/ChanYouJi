@@ -12,5 +12,6 @@
     <string name="title_activity_plans">PlansActivity</string>
     <string name="title_activity_trips">TripsActivity</string>
     <string name="title_activity_enter__lvxing_di">Enter_LvxingDi</string>
+    <string name="title_activity_enter_travel">EnterTravelActivity</string>
 
 </resources>

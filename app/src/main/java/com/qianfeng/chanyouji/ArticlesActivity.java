@@ -6,13 +6,10 @@ import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.qianfeng.chanyouji.adapter.ArticleAdapter;
@@ -21,6 +18,7 @@ import com.qianfeng.chanyouji.netutils.DownLoadData;
 import com.qianfeng.chanyouji.netutils.PaseJson;
 import com.qianfeng.chanyouji.urls.FinalUrl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,7 +28,11 @@ public class ArticlesActivity extends ActionBarActivity implements PullToRefresh
     private String id;
     private String name_zh_cn;
     private TextView text_Name;
+    private ArticleAdapter adapter;
+    private List<Articles> articleses;
     private Handler handler=new Handler(){
+
+
         @Override
         public void handleMessage(Message msg) {
             //刷新完成
@@ -38,11 +40,10 @@ public class ArticlesActivity extends ActionBarActivity implements PullToRefresh
             if (msg.what==1) {
                 String data = (String) msg.obj;
                 //解析
-                List<Articles> articleses = PaseJson.jsonToArticles(data);
-                Log.d("articleses",articleses.toString());
-
+                articleses .addAll(PaseJson.jsonToArticles(data)) ;
                 //articlesListView 设置适配器
-                articlesListView.setAdapter(new ArticleAdapter(ArticlesActivity.this,articleses));
+
+               adapter.notifyDataSetChanged();
 
             }
         }
@@ -59,6 +60,8 @@ public class ArticlesActivity extends ActionBarActivity implements PullToRefresh
     }
 
     private void init() {
+        articleses=new ArrayList<Articles>();
+        adapter = new ArticleAdapter(ArticlesActivity.this,articleses);
         linear = ((LinearLayout) findViewById(R.id.articlesback));
         linear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +71,7 @@ public class ArticlesActivity extends ActionBarActivity implements PullToRefresh
         });
         articlesListView = ((PullToRefreshListView) findViewById(R.id.articleslistview));
         articlesListView.setOnRefreshListener(this);
+        articlesListView.setAdapter(adapter);
         text_Name = ((TextView) findViewById(R.id.articles));
         Intent intent = getIntent();
         id = intent.getStringExtra("id");

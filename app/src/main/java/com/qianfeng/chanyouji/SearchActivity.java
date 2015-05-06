@@ -10,11 +10,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
 import com.qianfeng.chanyouji.fragment.SearchForeignFragment;
 import com.qianfeng.chanyouji.fragment.SearchFourSeasonsFragment;
 import com.qianfeng.chanyouji.fragment.SearchHomeFragment;
-
 import java.util.ArrayList;
 import java.util.List;
 

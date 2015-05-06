@@ -1,6 +1,7 @@
 package com.qianfeng.chanyouji.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.qianfeng.chanyouji.EnterTravelActivity;
 import com.qianfeng.chanyouji.R;
 import com.qianfeng.chanyouji.netutils.BitmapHelper;
 
@@ -53,7 +55,7 @@ public class Enter_LvxingDi_Adapter extends BaseAdapter {
         }else {
             viewHolder= (ViewHolder) convertView.getTag();
         }
-        HashMap<String, String> HashMap1 = hashMaps.get(position);
+        final HashMap<String, String> HashMap1 = hashMaps.get(position);
         viewHolder.travel_place_tv1.setText(HashMap1.get("attraction_trips_count")+" 篇游记");
         viewHolder.travel_place_tv2.setText(HashMap1.get("name"));
         viewHolder.travel_place_tv3.setText(HashMap1.get("description"));
@@ -68,6 +70,18 @@ public class Enter_LvxingDi_Adapter extends BaseAdapter {
 
 
         BitmapHelper.getBitmapUtils().display(viewHolder.travel_place_iv,HashMap1.get("image_url"));
+        viewHolder.travel_place_iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EnterTravelActivity.class);
+                String id = HashMap1.get("id");
+                intent.putExtra("id",id);
+                context.startActivity(intent);
+            }
+        });
+
+
+
 
         return convertView;
     }

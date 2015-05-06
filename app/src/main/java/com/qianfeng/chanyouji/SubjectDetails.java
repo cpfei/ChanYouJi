@@ -3,10 +3,6 @@ package com.qianfeng.chanyouji;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -14,19 +10,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.qianfeng.chanyouji.adapter.SubjectdetalilsAdapter;
-import com.qianfeng.chanyouji.beans.MyListView;
 import com.qianfeng.chanyouji.beans.SubjectDetalisData;
 import com.qianfeng.chanyouji.netutils.BitmapHelper;
 import com.qianfeng.chanyouji.urls.Urls;
@@ -35,11 +24,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.security.auth.Subject;
 
 
 public class SubjectDetails extends ActionBarActivity {
@@ -111,6 +98,7 @@ public class SubjectDetails extends ActionBarActivity {
                     description.setText(article_sections.getJSONObject(0).getString("description"));
 
 
+
                     SubjectDetalisData data=null;
 
                     for(int i=1;i<article_sections.length();i++){
@@ -120,7 +108,10 @@ public class SubjectDetails extends ActionBarActivity {
 
                         if(!obj.getString("title").equals("")){
 //                            data.setTitle(obj.getString("title"));
-                            data.setTag(1);
+                            SubjectDetalisData data1 = new SubjectDetalisData();
+                            data1.setTitle(obj.getString("title"));
+                            datas.add(data1);
+                            data1.setTag(1);
                         }else{
                             data.setTag(0);
                         }
